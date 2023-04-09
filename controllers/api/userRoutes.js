@@ -43,13 +43,13 @@ router.post("/", async (req, res) => {
 	}
 });
 
-// Route updates a user - not working
+// Route updates a user
 router.put("/:usernameId", async (req, res) => {
 	try {
 		const updateUser = await User.findByIdAndUpdate(
-			{ _id: req.params.usernameId }
-			// { $addToSet: { thoughts: req.body } },
-			// { runValidators: true, new: true }
+			{ _id: req.params.usernameId },
+			{ $set: req.body },
+			{ runValidators: true, new: true }
 		);
 
 		if (!updateUser) {
@@ -80,22 +80,34 @@ router.delete("/:usernameId", async (req, res) => {
 	}
 });
 
-// Route adds a new friend to a user - not working
+// Route adds a new friend to a user
 router.post("/:usernameId/friends/:friendId", async (req, res) => {
 	try {
-		const user = await User.findById(usernameId);
-
-		if (!user) {
-			return res.status(4040).json({ message: "No user found with this ID" });
-		}
-
-		await User.findByIdAndUpdate(usernameId, {
-			$addToSet: { friends: friendId },
-		});
+		await User.findByIdAndUpdate(
+			{ _id: req.params.usernameId },
+			{
+				$addToSet: { friends: req.params.friendId },
+			}
+		);
 		return res.json({ message: "Friend added" });
 	} catch (err) {
 		console.log(err);
 		return res.status(500).json(err);
+	}
+});
+
+router.delete("/:usernameId/friends/:friendId", async (req, res) => {
+	try {
+		await User.findOneAndUpdate(
+			{ _id: req.params.usernameId },
+			{
+				$pull: { friends: req.params.friendId },
+				new: true,
+			}
+		);
+		res.status(200).json({ message: "Friend removed" });
+	} catch (err) {
+		res.status(500).json(err);
 	}
 });
 
