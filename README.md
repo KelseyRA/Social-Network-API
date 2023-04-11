@@ -3,7 +3,7 @@
   ## Table of Content
   
   - [Project Description](#Description)
-  - [Acceptance Criteria](#Acceptance)
+  - [Acceptance Criteria](#Acceptance-Criteria)
   - [Installation](#Installation)
   - [Contributors](#Contributors)
   - [Questions](#Questions)
@@ -23,7 +23,7 @@ A link to the demo video is below.
 ```
 https://drive.google.com/file/d/1n-4ZGLEKy58eMPAPfkKtajXiKVsqY7Cf/view?usp=share_link
 
-## Acceptance Criteria
+## Acceptance-Criteria
 
 ```
 GIVEN a social network API
