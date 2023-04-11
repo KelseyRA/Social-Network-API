@@ -14,7 +14,3 @@ db.once("open", () => {
 		console.log(`API server running on port ${PORT}`);
 	});
 });
-
-// const cwd = process.cwd();
-
-const { User, Thought, Reaction } = require("./models");
