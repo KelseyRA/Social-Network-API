@@ -11,7 +11,12 @@
 ## Description
 
 ```
-This application is the backend of a social media application. The routes created do the following. GET routes are made to get all users and all thoughts. GET by ID routes are created to get users by their ID or a thought by it's ID. PUT routes are created to update a user and thoughts. POST routes are present to create a user, thoughts, and add a friend to a user. DELETE routes were created to delete a user, thought, or a friend. Lastly a POST route was created to add a reaction to a thought as well as a DELETE route to remove the reaction.
+This application is the backend of a social media application. The routes created do the following. 
+GET routes are made to get all users and all thoughts. GET by ID routes are created to get users by their 
+ID or a thought by it's ID. PUT routes are created to update a user and thoughts. 
+POST routes are present to create a user, thoughts, and add a friend to a user. 
+DELETE routes were created to delete a user, thought, or a friend. 
+Lastly a POST route was created to add a reaction to a thought as well as a DELETE route to remove the reaction.
 ```
 ```
 A link to the demo video is below.
